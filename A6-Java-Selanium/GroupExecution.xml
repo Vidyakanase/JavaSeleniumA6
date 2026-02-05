@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+   <groups>
+     <run>
+        <include name="Bollywood"></include>
+        <include name="Tollywood"></include>
+        <exclude name="Pan India"></exclude>
+        </run>
+       </groups>
+    <classes>
+      <class name="org.automation.GroupExecution.AlliArjun"/>
+      <class name="org.automation.GroupExecution.SharukhKhan"/>
+      <class name="org.automation.GroupExecution.Dhanush"/>
+      <class name="org.automation.GroupExecution.Puneet"/>
+      <class name="org.automation.GroupExecution.MaheshBabu"/>
+      <class name="org.automation.GroupExecution.VickyKaushal"/>
+      <class name="org.automation.GroupExecution.Yash"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

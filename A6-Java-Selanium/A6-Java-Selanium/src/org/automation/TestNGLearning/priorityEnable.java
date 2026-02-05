@@ -1,0 +1,62 @@
+package org.automation.TestNGLearning;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class priorityEnable 
+{
+	String url ="https://demowebshop.tricentis.com/";
+	String gender ="male";
+	String firstname = "Vidya";
+	String lastname = "Kanase";
+	String email = "vidkanase1985@gmail.com";
+	String password ="851985";
+	@Test(priority = 1,enabled = true)
+	public void register()
+	{
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.get("url");
+		driver.findElement(By.linkText("register")).click();
+		
+		if(gender.equalsIgnoreCase("male"))
+		{
+			driver.findElement( By.id(("gender-male"))).click();
+		}
+		
+		else
+		{
+			driver.findElement(By.id("gender-female")).click();
+		}
+		driver.findElement(By.id("FirstName")).sendKeys(firstname);
+		driver.findElement(By.id("LasttName")).sendKeys(lastname);
+		driver.findElement(By.id(" Email")).sendKeys(email);
+		driver.findElement(By.id("Password")).sendKeys(password);
+		driver.findElement(By.id("ConfirmPassword")).sendKeys(password);
+		driver.findElement(By.id("regisrer-button")).click();
+		}
+	
+    @Test(priority = 2,enabled = true)
+    public void login()
+    {
+    	WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.get(url);
+		driver.findElement(By.linkText("Log in")).click();
+		driver.findElement(By.id("Email")).sendKeys(email);
+		driver.findElement(By.id("Password")).sendKeys(password);
+		driver.findElement(By.xpath("//input[@value='Log in']")).click();
+
+	}
+}
+
+
+
+
+
